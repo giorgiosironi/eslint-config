@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
-      - run: echo "${{ github.event }}"
+      - run: |
+          echo "ref: ${{ github.ref }}"
+          echo "event_name: ${{ github.event_name }}"
+          echo "toJson(event): ${{ toJson(github.event) }}"
