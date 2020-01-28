@@ -13,3 +13,6 @@ jobs:
           echo "ref: ${{ github.ref }}"
           echo "event_name: ${{ github.event_name }}"
           echo "toJson(event): ${{ toJson(github.event) }}"
+      - if: startsWith(github.ref, "refs/tags/")
+        run: echo "On a tag"
+
